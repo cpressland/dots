@@ -1,6 +1,5 @@
 {
   "catppuccin": { "branch": "main", "commit": "f67b886d65a029f12ffa298701fb8f1efd89295d" },
-  "feline.nvim": { "branch": "main", "commit": "9f1313f61a75ec5ebe805fedd46bdc130c420963" },
   "gitsigns.nvim": { "branch": "main", "commit": "5f808b5e4fef30bd8aca1b803b4e555da07fc412" },
   "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
