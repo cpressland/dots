@@ -1,8 +1,7 @@
 theme = catppuccin-mocha
 font-size = 14
 font-family = CaskaydiaCove Nerd Font
-command = /run/current-system/sw/bin/fish -l
-font-thicken = false
+command = /opt/homebrew/bin/fish -l
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 cursor-style-blink = false
