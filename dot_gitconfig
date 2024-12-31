@@ -1,0 +1,16 @@
+[user]
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICGANMx1jWscPLDH0mT+9CeGvT7BDrja7lVMtT+Ki08
+    name = Chris Pressland
+    email = mail@cpressland.io
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+    gpgsign = true
+[init]
+    defaultBranch = main
+[push]
+    autoSetupRemote = true
+[pull]
+    rebase = true
