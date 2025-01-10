@@ -14,6 +14,12 @@ if status is-interactive
         kubelogin convert-kubeconfig -l azurecli
     end
 
+    if type -q chezmoi
+	function ccd
+	    cd (chezmoi source-path)
+        end
+    end
+
     if type -q atuin
         atuin init fish --disable-up-arrow | source
     end
