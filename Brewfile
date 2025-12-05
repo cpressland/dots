@@ -27,6 +27,7 @@ brew "just"
 brew "kind"
 brew "kubernetes-cli"
 brew "kustomize"
+brew "lazygit"
 brew "leveldb"
 brew "magic-wormhole"
 brew "mas"
@@ -74,6 +75,7 @@ cask "iina"
 cask "steam"
 cask "telegram"
 cask "visual-studio-code"
+cask "xld"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Cascadea", id: 1432182561
