@@ -2415,5 +2415,180 @@
     "_id": "28be8e13-93da-4a91-af2d-e7418a8aed21",
     "_rev": 1765207676054,
     "id": 13
+  },
+  {
+    "enabled": true,
+    "installDate": 1765207943572,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name Gmail Catppuccin\n@namespace github.com/catppuccin/userstyles/styles/gmail\n@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/gmail\n@version 2025.09.06\n@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/gmail/catppuccin.user.less\n@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Agmail\n@description Soothing pastel theme for Gmail\n@author Catppuccin\n@license MIT\n\n@preprocessor less\n@var select lightFlavor \"Light Flavor\" [\"latte:Latte*\", \"frappe:Frappé\", \"macchiato:Macchiato\", \"mocha:Mocha\"]\n@var select darkFlavor \"Dark Flavor\" [\"latte:Latte\", \"frappe:Frappé\", \"macchiato:Macchiato\", \"mocha:Mocha*\"]\n@var select accentColor \"Accent\" [\"rosewater:Rosewater\", \"flamingo:Flamingo\", \"pink:Pink\", \"mauve:Mauve*\", \"red:Red\", \"maroon:Maroon\", \"peach:Peach\", \"yellow:Yellow\", \"green:Green\", \"teal:Teal\", \"blue:Blue\", \"sapphire:Sapphire\", \"sky:Sky\", \"lavender:Lavender\", \"subtext0:Gray\"]\n==/UserStyle== */\n\n@import \"https://userstyles.catppuccin.com/lib/lib.less\";\n\n@-moz-document domain(\"mail.google.com\") {\n  :root {\n    @media (prefers-color-scheme: light) {\n      #catppuccin(@lightFlavor);\n    }\n    @media (prefers-color-scheme: dark) {\n      #catppuccin(@darkFlavor);\n    }\n  }\n\n  #catppuccin(@flavor) {\n    #lib.palette();\n    #lib.defaults();\n\n    input,\n    textarea {\n      caret-color: @text;\n    }\n\n    #input-styling {\n      input,\n      select,\n      button {\n        background-color: @mantle;\n        color: @text;\n        border-color: @surface0;\n        border-style: solid;\n        border-width: 1px;\n        box-shadow: none;\n      }\n    }\n\n    * {\n      text-shadow: none !important;\n    }\n\n    /* Gmail logo */\n    [src=\"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png\"],\n    [src=\"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r5.png\"] {\n      height: unset !important;\n      width: unset !important;\n      @svg: escape(\n        '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"17.727 14.319 30 22.5\" width=\"30\" height=\"22.5\"><path fill=\"@{blue}\" d=\"M19.773 36.819h4.773V25.227l-6.819-5.114v14.659a2.044 2.044 0 0 0 2.045 2.045\"/><path fill=\"@{green}\" d=\"M40.909 36.819h4.773a2.044 2.044 0 0 0 2.045-2.045v-14.66l-6.819 5.114\"/><path fill=\"@{yellow}\" d=\"M40.909 16.364v8.864l6.819-5.114v-2.727c0-2.529-2.888-3.971-4.909-2.455\"/><path fill=\"@{red}\" d=\"M24.545 25.227v-8.863l8.181 6.136 8.181-6.136v8.864l-8.181 6.136m-15-13.977v2.727l6.819 5.114v-8.864l-1.909-1.431c-2.025-1.517-4.91-.075-4.91 2.455\"/></svg>'\n      );\n      content: url(\"data:image/svg+xml,@{svg}\");\n    }\n\n    /* Tooltips */\n    .T-ays-iP,\n    .gb_Ac {\n      background-color: @crust;\n      color: @text;\n    }\n\n    /* Buttons */\n\n    /* Solid primary */\n    .T-I-atl {\n      background-color: @accent;\n      color: @crust;\n    }\n\n    /* Transparent primary */\n    .l0,\n    div.b8 .a8k,\n    .bAo > .ad {\n      color: @accent;\n\n      &::before {\n        background-color: @accent;\n      }\n    }\n\n    /* Transparent secondary */\n    .bs0 > .acM,\n    .bti > .btg,\n    .a8Y > .T-I-ax7 {\n      color: @text;\n\n      /* Disabled */\n      &.acN {\n        color: @subtext0;\n      }\n\n      &:hover::before {\n        background-color: @overlay2;\n      }\n    }\n\n    /* Header and sidebars */\n    .w-asV,\n    .bkL,\n    .bhZ.bym,\n    .bhZ.bjB,\n    .bhZ.bym.baA {\n      background-color: @mantle;\n    }\n    /* Header icons */\n    .gb_Kc svg,\n    .gb_Pc.gb_Uc svg,\n    .gb_Lc .gb_rd .gb_sd,\n    .gb_Lc .gb_rd .gb_Kc,\n    .gb_Lc .gb_rd .gb_ud,\n    .gb_Pc.gb_Uc .gb_sd {\n      color: @text;\n    }\n    /* Search mail input */\n    .gb_Kc .gb_hd {\n      background-color: @surface1;\n\n      .gb_je,\n      .gb_qe,\n      .gsan_a,\n      .gsas_a,\n      svg {\n        color: @text;\n      }\n    }\n    /* Search mail input on focus */\n    .gb_hd.gb_id {\n      background-color: @base;\n    }\n    /* Active search / filter modal */\n    .gssb_c {\n      /* Icons */\n      button svg,\n      .asor {\n        filter: @text-filter;\n      }\n\n      /* Recent searches */\n      .aRp,\n      .gssb_e,\n      .gssb_m {\n        background-color: @base;\n        color: @text;\n      }\n\n      /* Hovered recent searches */\n      .gssb_i {\n        background-color: @surface0;\n\n        > .gssb_a {\n          border-left-color: @accent;\n        }\n\n        /* X icon */\n        .gsaq_b {\n          filter: @text-filter;\n        }\n      }\n\n      .aSP,\n      .gssb_e {\n        border-color: @surface2;\n      }\n\n      /* Separator */\n      .gssb_l {\n        background-color: @surface0;\n      }\n\n      /* Search results */\n\n      /* Icons */\n      .gsoi_0,\n      .asor_o,\n      .gsoi_msra {\n        filter: @text-filter;\n      }\n\n      /* People involved */\n      .asor_e {\n        color: @subtext0;\n      }\n    }\n    /* Pill filters */\n    .H2 {\n      background-color: @base;\n      border-color: @surface0;\n      color: @subtext1;\n      fill: @subtext1;\n\n      &:hover {\n        background-color: @mantle;\n      }\n\n      &.bws {\n        background-color: @accent;\n        color: @crust;\n        fill: @crust;\n\n        .HV {\n          filter: @crust-filter;\n        }\n\n        &:hover .H1 {\n          background-color: darken(@accent, 5%);\n        }\n      }\n    }\n    .aqc .H2 {\n      border-color: @text;\n      color: @text;\n\n      &.bws {\n        background-color: @surface2;\n        color: @mantle;\n      }\n    }\n    /* Advanced search/filters modal */\n    .ZF-z6,\n    .ZF-zT,\n    .ZF-Av .lJ,\n    .ZF-Av .lN {\n      background-color: @base;\n\n      &,\n      .boo > .ZG,\n      .boo .aQl > .J-JN-M-I-Jm,\n      .boo .aaa > .J-JN-M-I-Jm,\n      .boo .ZE > .J-JN-M-I-Jm {\n        color: @text;\n      }\n\n      .btl.acK,\n      .btn::before {\n        filter: @text-filter;\n      }\n\n      /* Text inputs */\n      .nr {\n        background-color: @base;\n        color: @text;\n\n        &:focus {\n          box-shadow: inset 0 -1px 0 0 @accent;\n        }\n      }\n\n      /* Calendar input */\n      .bs5::after {\n        filter: @text-filter;\n      }\n      .J-JB-KA,\n      .J-JB-KA-JS,\n      .J-JB-KA-Jk,\n      .J-JB-KA-LG {\n        background-color: @base;\n        color: @text;\n        border-color: @surface0;\n\n        /* Past days */\n        .J-JB-KA-Ku-Kk {\n          color: @subtext0;\n        }\n        /* Future days */\n        .J-JB-KA-a1R-JB.J-JB-KA-LH,\n        .J-JB-KA-a1R-JB.J-JB-KA-Ku-Kk,\n        .J-JB-KA-JB.J-JB-KA-a1R-JB {\n          color: @subtext1;\n        }\n\n        /* Hovered day */\n        .J-JB-KA-JB:not(.J-JB-KA-K8, .J-JB-KA-KO):hover {\n          color: @crust;\n\n          &::before {\n            background-color: fade(@accent, 70%);\n          }\n        }\n\n        /* Selected day */\n        .J-JB-KA-KO {\n          color: @crust;\n\n          &::before {\n            background-color: @accent;\n          }\n        }\n\n        /* Unselected today */\n        .J-JB-KA-K8 {\n          color: @crust;\n\n          &::before {\n            background-color: @overlay2;\n          }\n        }\n      }\n\n      /* Checkbox inputs */\n      .bs1 + .bs3,\n      .btj + .aD {\n        color: @text;\n\n        &::before {\n          filter: @text-filter;\n        }\n      }\n\n      /* Dropdown/select inputs */\n      .J-JN-M-I {\n        color: @text;\n      }\n    }\n\n    /* Sidebar selected item */\n    .TK .TO.nZ:active,\n    .TK .TO.ol:active,\n    .TK .TO.nZ,\n    .TK .TO.ol,\n    .byl .TK .nZ.aBP,\n    .byl .TK .nZ.aS3,\n    .byl .TK .nZ.aS4,\n    .byl .TK .nZ.aS5,\n    .byl .TK .nZ.aS6,\n    .VDSZAf.H5o3mc {\n      background-color: @surface0;\n    }\n    .TO.NQ,\n    .n6 .ah9:hover,\n    .n6 .ah9.aiu:hover,\n    .n6 .ah9:focus,\n    .TK .TO:active,\n    .n6 .ah9.aiu:active,\n    .CL:hover,\n    .H5o3mc:not(.VDSZAf):hover,\n    .CL.NQ,\n    .H5o3mc:not(.VDSZAf).NQ {\n      background-color: @surface1;\n    }\n    .byl .TK .TO.nZ > .aHS-bnt .n0,\n    .TK .nZ > .aHS-bnt .bsU,\n    .byl .TK .nZ.aS3 .nU > .n0,\n    .TK .nZ.aS3 .bsU,\n    .byl .TK .nZ.aS4 .nU > .n0,\n    .TK .nZ.aS4 .bsU,\n    .byl .TK .nZ.aS5 .nU > .n0,\n    .TK .nZ.aS5 .bsU,\n    .byl .TK .nZ.aS6 .nU > .n0,\n    .TK .nZ.aS6 .bsU,\n    .TK .TO.nZ .nU > .n0,\n    .TK .ol.NQ .nU > .n0,\n    .TK .TO.ol .nU > .n0,\n    .TK .nZ .bsU,\n    .TK .ol .bsU,\n    .VDSZAf.H5o3mc > .Q7,\n    .TO .nU > .n0,\n    .TO.NQ .nU > .n0,\n    .TO.nZ .nU > .n0,\n    .ah9 > .CJ,\n    .n3 > .CL > .CK,\n    .aAv,\n    .bsU {\n      color: @text;\n    }\n    /* Icons */\n    .nZ > .TN.aHS-bnt .qj,\n    .TO:not(.nZ) > .TN > .qj:not([style*=\"background-color\"]),\n    .n6 .n4 .G-asx,\n    .aAw .aAu,\n    .pM,\n    .TO.nZ > .TN > .qj,\n    .n3 .CL::before {\n      filter: @text-filter;\n    }\n\n    /* Compose email button */\n    .z0 > .L3 {\n      background-color: @accent;\n      color: @crust;\n\n      &:focus {\n        background-color: @text;\n      }\n    }\n    .WR .z0 > .L3::before,\n    .WR.anZ .z0 > .L3::before {\n      filter: @crust-filter;\n    }\n\n    /* Top section of inbox */\n    .bkK > .nH {\n      background-color: @surface0;\n\n      /* Icons */\n      .bzn,\n      .aqJ .amJ,\n      .adg .adk {\n        filter: @text-filter;\n      }\n    }\n    /* Inbox categories */\n    .aKx > .aKz {\n      color: @text;\n    }\n    /* Icons */\n    .aAy > div {\n      filter: @text-filter;\n    }\n    /* Currently selected category */\n    .J-KU-KO::before {\n      background-color: @text;\n    }\n    /* Inbox categories hover */\n    .aRz.J-KU:hover {\n      background-color: @surface1;\n    }\n    /* Email count / pagination */\n    div[aria-label=\"Show more messages\"] {\n      .Dj {\n        color: @subtext1;\n      }\n\n      &::before {\n        background-color: @text;\n      }\n    }\n    .h0 {\n      color: @subtext1;\n    }\n    /* Inbox footer */\n    .md.mj,\n    .aeU .ma,\n    .ma .mb,\n    .ae3 .l6,\n    .l9,\n    .l8,\n    .aiD {\n      color: @subtext1;\n    }\n    /* Storage progress bar */\n    .aiC {\n      background-color: @overlay0;\n\n      .aiA {\n        background-color: @subtext0;\n      }\n    }\n    /* External link icon */\n    .aiz {\n      filter: @text-filter;\n    }\n\n    /* Read emails */\n    .yO {\n      background-color: @base;\n      color: @text;\n\n      box-shadow: inset 0 -1px 0 0 @surface0;\n\n      &:hover {\n        box-shadow:\n          inset 1px 0 0 @surface0,\n          inset -1px 0 0 @surface0,\n          0 0 4px 0 @surface1,\n          0 0 6px 2px @surface1;\n      }\n    }\n    /* Read email text */\n    .zE {\n      color: @text;\n    }\n    // Select icon\n    .xY > .T-Jo,\n    td.apU > .T-KT.aXw::before,\n    // Important icon\n    .pG .a9q,\n    // Delete/trash icon\n    .aqN,\n    // Hover action icons\n    .bqY li {\n      filter: @text-filter;\n    }\n    /* Important icon filled, star icon filled */\n    .ha .a9q.pH,\n    .a9q.pH,\n    .aoj,\n    td.apU > .T-KT.T-KT-Jp::before {\n      filter: @yellow-filter;\n    }\n    .pG:hover > .a9q::before {\n      background-color: fade(@yellow, 30%);\n    }\n    /* Read email dates */\n    .yO > .xW {\n      color: @subtext0;\n    }\n    /* Read email summary truncated */\n    .y2 {\n      color: @subtext1;\n    }\n    /* Selected unread emails */\n    .x7 {\n      background-color: @accent;\n      color: @mantle;\n\n      /* Dates */\n      .xW {\n        color: @crust;\n      }\n\n      // Select icon\n      .xY > .T-Jo,\n      // Star icon\n      td.apU > .T-KT.aXw::before,\n      // Important icon\n      .pG .a9q,\n      // Delete/trash icon\n      .aqN,\n      // Hover action icons\n      .bqY li {\n        filter: @crust-filter;\n      }\n    }\n    /* Unsubscribe button */\n    .aOd.T-I {\n      color: @text;\n      box-shadow: inset 0 0 0 1px @surface2;\n    }\n    /* Draft text */\n    .boq {\n      color: @red;\n    }\n    /* No drafts message, trash 30 days message */\n    .TD,\n    .Tm .ya {\n      background-color: @surface1;\n      color: @text;\n    }\n    /* Your social/promotions/updates tab is empty */\n    .aRs {\n      background-color: @base;\n      color: @subtext0;\n\n      .aRv {\n        color: @text;\n      }\n      .aRq {\n        color: @accent;\n      }\n    }\n    /* You could lose access banner */\n    .GR {\n      background-color: @base;\n\n      /* Primary text */\n      .GX {\n        color: @text;\n      }\n      /* Subtext */\n      .GT {\n        color: @subtext1;\n      }\n\n      /* Dismiss button */\n      .GW {\n        color: @text;\n\n        &::before {\n          background-color: @text;\n        }\n      }\n      /* Add recovery info button */\n      .GV {\n        color: @accent;\n\n        &::before {\n          background-color: @accent;\n        }\n      }\n    }\n    /* Attachments chips */\n    .brc {\n      box-shadow: inset 0 0 0 1px @surface0;\n      color: @text;\n\n      &:hover {\n        background-color: @surface0;\n      }\n    }\n\n    /* Floating menu */\n    .J-M,\n    .OO.Pa {\n      background-color: @surface1;\n\n      /* Menu section header */\n      .J-awr,\n      .asc {\n        color: @subtext1;\n      }\n\n      /* Menu item */\n\n      .J-N,\n      .J-Ks-KO .J-N-Jz,\n      .J-N-JT .J-N-Jz,\n      .J-N-JW .J-N-Jz,\n      .J-LC,\n      .J-JK,\n      .bmz {\n        color: @text;\n      }\n      /* Disabled */\n      .J-N-JE .J-N-atj,\n      .J-N-JE .J-N-Jz {\n        color: @subtext0 !important;\n      }\n\n      /* Checkmark, arrow, checkbox, star, calendar icon */\n      .J-Ks-KO .J-N-Jo,\n      .asi .J-Ks-KO::before,\n      .J-Ph-hFsbo,\n      .J-LC-Jo,\n      .bi4 > .T-KT:not(.T-KT-Jp, .byM)::before,\n      .aaA.mYVwse,\n      .J-N-JX {\n        filter: @text-filter;\n      }\n      .bmz.bjF::before {\n        border-color: @subtext0;\n      }\n\n      /* Hovered menu item */\n      .J-N-JT,\n      .J-N-JW,\n      .J-LC-JT,\n      .J-LC-JW,\n      .J-JK-JT,\n      .J-JK-JW,\n      .bmz.bk5 {\n        background-color: @surface2;\n        border-color: @overlay1;\n      }\n\n      /* Menu section divider */\n      .J-Kh {\n        border-top-color: @surface2;\n      }\n    }\n    /* Modal search input */\n    .agd .J-M-JJ input {\n      background-color: @surface1;\n      color: @text;\n    }\n    .bqf {\n      box-shadow: inset 0 -2px 0 0 @surface2;\n\n      &:focus {\n        box-shadow: inset 0 -2px 0 0 @accent;\n      }\n    }\n    /* Magnifying glass icon */\n    .A0 {\n      filter: @text-filter;\n    }\n    /* Edit label modal */\n    div.Kj-JD {\n      background-color: @base;\n\n      /* Edit label text */\n      span.Kj-JD-K7-K0 {\n        color: @text;\n      }\n\n      /* Close X icon */\n      span.Kj-JD-K7-Jq::after {\n        filter: @text-filter;\n      }\n\n      #input-styling();\n\n      /* Input labels */\n      div.Kj-JD-Jz {\n        color: @subtext1;\n      }\n\n      /* Cancel button */\n      div.Kj-JD-Jl > button,\n      .bBh .Kj-JD-Jl > .J-at1-auR {\n        color: @subtext1;\n      }\n\n      /* Save button */\n      div.Kj-JD-Jl > button.J-at1-atl,\n      div.Kj-JD-Jl > button.J-at1-auR {\n        background-color: @accent;\n        color: @crust;\n      }\n    }\n\n    /* Toast notifications */\n    .bAp.b8.UC .vh {\n      background-color: @crust;\n      color: @text;\n    }\n    /* Close icon */\n    .b8 .bBe .bBf {\n      filter: @text-filter;\n    }\n\n    /* Compose mail window */\n    /* Top header bar */\n    .Hy.Hy .m,\n    .IG {\n      background-color: @mantle;\n\n      .Hp,\n      .zu,\n      .H,\n      .Iy .az9 {\n        color: @text;\n      }\n\n      .Hm img,\n      .SB,\n      .b7 .mK,\n      .bAm .aaq .mK,\n      .Un .mK,\n      .HX .mK,\n      .HQ .Un::after {\n        filter: @text-filter;\n      }\n    }\n    .aaZ,\n    .Ap,\n    .Am,\n    .aDg > .aDj,\n    .aoP .Ar,\n    .wO,\n    .aoT,\n    .agP,\n    .aGb,\n    .GQ {\n      color: @text;\n      caret-color: @text;\n\n      &,\n      &::before {\n        background: @base;\n      }\n    }\n    .gQ,\n    .gO,\n    .oL {\n      color: @subtext0;\n    }\n    /* Bottom toolbar icons */\n    .aaA,\n    .btC .dv,\n    .btC .og.T-I-J3,\n    .btC .J-N-JX.og.T-I-J3,\n    .btC .Y1,\n    .btC .Xv.T-I.J-JN-M-I > .J-JN-M-I-JG,\n    .J-JN-M-I-JG,\n    .J-Z-M-I-J6-H > .J-Z-M-I-JG {\n      filter: @text-filter;\n    }\n    /* Floating toolbar (expanded window) */\n    .J-Z {\n      background-color: @mantle;\n\n      .J-Z-I,\n      .J-Z-M-I {\n        color: @subtext1;\n      }\n    }\n    /* Send button */\n    .gU .v7.T-I:not(.btz),\n    .gU .hG:not(.v6) {\n      background-color: @accent;\n      color: @crust;\n    }\n    .hG > .G-asx,\n    .SI .hG > .G-asx {\n      filter: @crust-filter;\n    }\n    /* Contact autofill */\n    .afC,\n    .bvx {\n      background: @mantle;\n\n      /* Contact list item */\n      .agJ {\n        .aL8,\n        .aXS {\n          color: @text;\n        }\n\n        &:hover {\n          background: @base;\n        }\n      }\n    }\n\n    --pkw-background: @mantle;\n    --pkw-outline: @surface0;\n    --pkw-outline-variant: @surface0;\n    --pkw-on-surface-variant: @text;\n    /* Contact chip */\n    .agh,\n    .bbV {\n      background: @base;\n\n      .afV {\n        background: @base;\n        color: @text;\n\n        &:hover {\n          background: @surface0;\n          color: @text;\n        }\n      }\n    }\n\n    /* Settings */\n    .dt {\n      color: @text;\n    }\n    /* Navigation header */\n    .v {\n      /* Tabs */\n      .fY,\n      .f1 {\n        background-color: @surface0;\n\n        .f0 {\n          color: @text;\n        }\n      }\n\n      /* Currently selected tab */\n      .fZ {\n        box-shadow: inset 0 -2px 0 0 @accent;\n      }\n    }\n    /* Main panel */\n    .r4 {\n      background-color: @base;\n      color: @text;\n\n      /* Dividers */\n      .r7 td,\n      .Jb .J0:not(:last-child) {\n        border-bottom-color: @surface0;\n      }\n\n      /* Links */\n      .r7 .e,\n      .sA,\n      .r4 .e,\n      .el {\n        color: @accent;\n      }\n\n      #input-styling();\n      .qK,\n      .qL {\n        background-color: @mantle;\n      }\n      .nr,\n      .Ar {\n        background-color: @base;\n        color: @text;\n        border-color: @surface0 !important;\n      }\n      /* Some buttons */\n      .Uu {\n        box-shadow: inset 0 0 0 1px @surface0;\n        color: @accent;\n      }\n    }\n    /* Labels page */\n    .alO {\n      background-color: @base;\n      color: @text;\n\n      .rb {\n        color: @subtext1;\n      }\n\n      /* Table items */\n      .To.Ze {\n        background-color: @surface0;\n      }\n\n      /* Links */\n      .alP {\n        color: @accent;\n      }\n\n      /* Dividers */\n      .rZ {\n        background-color: @surface0;\n      }\n    }\n\n    /* Confirm popup modal */\n    div[aria-modal=\"true\"] {\n      --gm3-dialog-refactored-container-color: @base;\n      --gm3-dialog-refactored-supporting-text-color: @text;\n      --gm3-dialog-refactored-headline-color: @text;\n\n      /* Buttons */\n      [data-mdc-dialog-action=\"ok\"] {\n        background-color: @accent;\n        --gm3-button-text-label-text-color: @crust;\n        --gm3-button-text-hover-label-text-color: @crust;\n        --gm3-button-text-pressed-label-text-color: @crust;\n      }\n\n      [data-mdc-dialog-action=\"cancel\"] {\n        --gm3-button-text-label-text-color: @subtext1;\n        --gm3-button-text-hover-label-text-color: @text;\n        --gm3-button-text-focus-label-text-color: @text;\n        --gm3-button-text-pressed-label-text-color: @text;\n\n        &:hover,\n        &:focus,\n        &:active {\n          background-color: @surface0;\n        }\n      }\n    }\n  }\n}\n",
+    "usercssData": {
+      "name": "Gmail Catppuccin",
+      "namespace": "github.com/catppuccin/userstyles/styles/gmail",
+      "homepageURL": "https://github.com/catppuccin/userstyles/tree/main/styles/gmail",
+      "version": "2025.09.06",
+      "updateURL": "https://github.com/catppuccin/userstyles/raw/main/styles/gmail/catppuccin.user.less",
+      "supportURL": "https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Agmail",
+      "description": "Soothing pastel theme for Gmail",
+      "author": "Catppuccin",
+      "license": "MIT",
+      "preprocessor": "less",
+      "vars": {
+        "lightFlavor": {
+          "type": "select",
+          "label": "Light Flavor",
+          "name": "lightFlavor",
+          "value": null,
+          "default": "latte",
+          "options": [
+            {
+              "name": "latte",
+              "label": "Latte",
+              "value": "latte"
+            },
+            {
+              "name": "frappe",
+              "label": "Frappé",
+              "value": "frappe"
+            },
+            {
+              "name": "macchiato",
+              "label": "Macchiato",
+              "value": "macchiato"
+            },
+            {
+              "name": "mocha",
+              "label": "Mocha",
+              "value": "mocha"
+            }
+          ]
+        },
+        "darkFlavor": {
+          "type": "select",
+          "label": "Dark Flavor",
+          "name": "darkFlavor",
+          "value": null,
+          "default": "mocha",
+          "options": [
+            {
+              "name": "latte",
+              "label": "Latte",
+              "value": "latte"
+            },
+            {
+              "name": "frappe",
+              "label": "Frappé",
+              "value": "frappe"
+            },
+            {
+              "name": "macchiato",
+              "label": "Macchiato",
+              "value": "macchiato"
+            },
+            {
+              "name": "mocha",
+              "label": "Mocha",
+              "value": "mocha"
+            }
+          ]
+        },
+        "accentColor": {
+          "type": "select",
+          "label": "Accent",
+          "name": "accentColor",
+          "value": "pink",
+          "default": "mauve",
+          "options": [
+            {
+              "name": "rosewater",
+              "label": "Rosewater",
+              "value": "rosewater"
+            },
+            {
+              "name": "flamingo",
+              "label": "Flamingo",
+              "value": "flamingo"
+            },
+            {
+              "name": "pink",
+              "label": "Pink",
+              "value": "pink"
+            },
+            {
+              "name": "mauve",
+              "label": "Mauve",
+              "value": "mauve"
+            },
+            {
+              "name": "red",
+              "label": "Red",
+              "value": "red"
+            },
+            {
+              "name": "maroon",
+              "label": "Maroon",
+              "value": "maroon"
+            },
+            {
+              "name": "peach",
+              "label": "Peach",
+              "value": "peach"
+            },
+            {
+              "name": "yellow",
+              "label": "Yellow",
+              "value": "yellow"
+            },
+            {
+              "name": "green",
+              "label": "Green",
+              "value": "green"
+            },
+            {
+              "name": "teal",
+              "label": "Teal",
+              "value": "teal"
+            },
+            {
+              "name": "blue",
+              "label": "Blue",
+              "value": "blue"
+            },
+            {
+              "name": "sapphire",
+              "label": "Sapphire",
+              "value": "sapphire"
+            },
+            {
+              "name": "sky",
+              "label": "Sky",
+              "value": "sky"
+            },
+            {
+              "name": "lavender",
+              "label": "Lavender",
+              "value": "lavender"
+            },
+            {
+              "name": "subtext0",
+              "label": "Gray",
+              "value": "subtext0"
+            }
+          ]
+        }
+      }
+    },
+    "author": "Catppuccin",
+    "description": "Soothing pastel theme for Gmail",
+    "url": "https://github.com/catppuccin/userstyles/tree/main/styles/gmail",
+    "updateUrl": "https://github.com/catppuccin/userstyles/raw/main/styles/gmail/catppuccin.user.less",
+    "name": "Gmail Catppuccin",
+    "originalDigest": "8b20d9b6abf1727708f38f8932dc6a59589c21e2",
+    "_id": "a335366e-2796-418f-b70f-fdc593b15284",
+    "_rev": 1765207943573,
+    "id": 14
   }
 ]
