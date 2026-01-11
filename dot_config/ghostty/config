@@ -5,3 +5,4 @@ command = /opt/homebrew/bin/fish -l
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 cursor-style-blink = false
+keybind = alt+3=text:#
