@@ -1,7 +1,6 @@
 tap "azure/kubelogin"
 tap "fluxcd/tap"
 tap "hashicorp/tap"
-tap "homebrew/bundle"
 tap "nikitabobko/tap"
 brew "zstd"
 brew "atuin"
