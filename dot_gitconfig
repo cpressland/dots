@@ -3,7 +3,7 @@
     name = Chris Pressland
     email = mail@cpressland.io
 
-[includeIf "gitdir/i:**/thredd*/**"]
+[includeIf "hasconfig:remote.*.url:git@bitbucket.org:thredd/**"]
     path = ~/.gitconfig-thredd
 
 [gpg]
