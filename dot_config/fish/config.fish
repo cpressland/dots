@@ -15,8 +15,8 @@ if status is-interactive
     end
 
     if type -q chezmoi
-	function ccd
-	    cd (chezmoi source-path)
+        function ccd
+            cd (chezmoi source-path)
         end
     end
 
@@ -40,6 +40,18 @@ if status is-interactive
         kubectl completion fish | source
     end
 
+    if type -q kubecolor
+        function kubectl --wraps kubectl
+            command kubecolor $argv
+        end
+        function k --wraps kubectl
+            command kubecolor $argv
+        end
+        function kubecolor --wraps kubectl
+            command kubecolor $argv
+        end
+    end
+
     if type -q flux
         flux completion fish | source
     end
@@ -52,4 +64,3 @@ if status is-interactive
         enable_transience
     end
 end
-
