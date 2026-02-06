@@ -1,0 +1,42 @@
+# Mac App Store
+brew "mas"
+
+# 1Password
+cask "1password"
+cask "1password-cli"
+mas "1Password for Safari", id: 1569813296
+
+# Browsers
+cask "firefox"
+cask "helium-browser"
+mas "Wipr", id: 1662217862
+mas "Cascadea", id: 1432182561
+
+# Shells
+brew "zsh"
+brew "bash"
+brew "fish"
+brew "tmux"
+brew "starship"
+
+# Git
+brew "git"
+brew "lazygit"
+
+# Tools
+brew "jq"
+brew "fd"
+brew "bat"
+brew "eza"
+brew "vim"
+brew "curl"
+brew "tree"
+brew "wget"
+brew "zstd"
+brew "rsync"
+brew "watch"
+brew "rclone"
+brew "neovim"
+brew "chezmoi"
+brew "ripgrep"
+brew "dockutil"

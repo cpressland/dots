@@ -1,138 +1,16 @@
-tap "azure/kubelogin"
-tap "fluxcd/tap"
-tap "hashicorp/tap"
-tap "nikitabobko/tap"
-brew "zstd"
-brew "atuin"
-brew "python@3.13"
-brew "awscli"
-brew "azure-cli"
-brew "bash"
-brew "bat"
-brew "chezmoi"
-brew "curl"
-brew "dockutil"
-brew "eza"
-brew "fd"
-brew "ffmpeg"
-brew "figlet"
-brew "fish"
-brew "git"
-brew "go"
-brew "handbrake"
-brew "helm"
-brew "jq"
-brew "just"
-brew "kind"
-brew "kubernetes-cli"
-brew "kustomize"
-brew "lazygit"
-brew "leveldb"
-brew "magic-wormhole"
-brew "mas"
-brew "media-info"
-brew "mosquitto"
-brew "neovim"
-brew "node"
-brew "opentofu"
-brew "oras"
-brew "pipenv"
-brew "pipx"
-brew "poetry"
-brew "postgresql@15"
-brew "postgresql@16"
-brew "postgresql@17"
-brew "rclone"
-brew "redis"
-brew "ripgrep"
-brew "rsync"
-brew "rust"
-brew "speedtest-cli"
-brew "starship"
-brew "tmux"
-brew "tree"
-brew "trivy"
-brew "uv"
-brew "vim"
-brew "watch"
-brew "wget"
-brew "wireguard-tools"
-brew "yarn"
-brew "yt-dlp"
-brew "zsh"
-brew "azure/kubelogin/kubelogin"
-brew "fluxcd/tap/flux"
-brew "hashicorp/tap/terraform"
-cask "1password"
-cask "1password-cli"
-cask "coconutbattery"
-cask "firefox"
-cask "font-cascadia-code"
-cask "font-caskaydia-cove-nerd-font"
-cask "ghostty"
-cask "iina"
-cask "steam"
-cask "telegram"
-cask "visual-studio-code"
-cask "xld"
-mas "1Password for Safari", id: 1569813296
-mas "Amphetamine", id: 937984704
-mas "Cascadea", id: 1432182561
-mas "DaisyDisk", id: 411643860
-mas "Infuse", id: 1136220934
-mas "Microsoft Word", id: 462054704
-mas "Pages", id: 409201541
-mas "Slack", id: 803453959
-mas "SponsorBlock", id: 1573461917
-mas "Tailscale", id: 1475387142
-mas "Telephone", id: 406825478
-mas "The Unarchiver", id: 425424353
-mas "UK Salary Calculator", id: 505795901
-mas "WhatsApp", id: 310633997
-mas "Wipr", id: 1662217862
-mas "WireGuard", id: 1451685025
-vscode "bbenoist.nix"
-vscode "bierner.markdown-mermaid"
-vscode "catppuccin.catppuccin-vsc"
-vscode "catppuccin.catppuccin-vsc-icons"
-vscode "charliermarsh.ruff"
-vscode "christian-kohler.path-intellisense"
-vscode "codezombiech.gitignore"
-vscode "docker.docker"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "github.vscode-github-actions"
-vscode "golang.go"
-vscode "hashicorp.hcl"
-vscode "hashicorp.terraform"
-vscode "kevinrose.vsc-python-indent"
-vscode "mark-wiemer.vscode-autohotkey-plus-plus"
-vscode "mechatroner.rainbow-csv"
-vscode "mhutchie.git-graph"
-vscode "ms-azuretools.vscode-azure-mcp-server"
-vscode "ms-azuretools.vscode-azureresourcegroups"
-vscode "ms-azuretools.vscode-containers"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-python.vscode-python-envs"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode-remote.remote-wsl"
-vscode "ms-vscode.powershell"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vsliveshare.vsliveshare"
-vscode "opentofu.vscode-opentofu"
-vscode "rangav.vscode-thunder-client"
-vscode "redhat.vscode-commons"
-vscode "redhat.vscode-yaml"
-vscode "skellock.just"
-vscode "skyapps.fish-vscode"
-vscode "streetsidesoftware.code-spell-checker"
-vscode "tamasfe.even-better-toml"
-vscode "thenuprojectcontributors.vscode-nushell-lang"
-vscode "ultram4rine.vscode-choosealicense"
-vscode "waderyan.gitblame"
-vscode "zhuangtongfa.material-theme"
+user = ENV['USER']
+
+eval_file = -> (path) {
+  instance_eval(File.read(File.expand_path(path)))
+}
+
+eval_file.call("~/.homebrew/Brewfile.common")
+eval_file.call("~/.homebrew/Brewfile.devops")
+
+case user
+when 'cpressland'
+  eval_file.call("~/.homebrew/Brewfile.personal")
+when 'chrispressland'
+  eval_file.call("~/.homebrew/Brewfile.work")
+  eval_file.call("~/.homebrew/Brewfile.vscode")
+end

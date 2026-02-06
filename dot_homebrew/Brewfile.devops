@@ -1,0 +1,46 @@
+# Terminals
+cask "ghostty"
+cask "font-cascadia-code"
+cask "font-caskaydia-cove-nerd-font"
+
+# Cloud CLIs
+brew "awscli"
+brew "azure-cli"
+
+# Text Editors
+cask "zed"
+cask "visual-studio-code"
+
+# Infrastructure as Code
+tap "hashicorp/tap"
+brew "opentofu"
+brew "hashicorp/tap/terraform"
+
+# Kubernetes
+tap "fluxcd/tap"
+tap "azure/kubelogin"
+brew "helm"
+brew "kind"
+brew "oras"
+brew "trivy"
+brew "kustomize"
+brew "kubecolor"
+brew "kubernetes-cli"
+brew "fluxcd/tap/flux"
+brew "azure/kubelogin/kubelogin"
+
+# Programming Languages
+brew "go"
+brew "uv"
+brew "just"
+brew "yarn"
+brew "node"
+brew "rust"
+
+# Databases
+brew "redis"
+brew "duckdb"
+brew "postgresql@18"
+brew "postgresql@17"
+brew "postgresql@16"
+brew "postgresql@15"

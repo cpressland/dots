@@ -1,0 +1,29 @@
+# Chat
+cask "telegram"
+mas "Slack", id: 803453959
+mas "WhatsApp", id: 310633997
+
+# Gaming
+cask "steam"
+
+# Media
+brew "ffmpeg"
+brew "media-info"
+brew "yt-dlp"
+brew "handbrake"
+cask "xld"
+cask "iina"
+
+# Networking
+brew "magic-wormhole"
+brew "wireguard-tools"
+mas "WireGuard", id: 1451685025
+
+# Misc
+brew "mosquitto"
+cask "coconutbattery"
+mas "DaisyDisk", id: 411643860
+mas "Amphetamine", id: 937984704
+mas "SponsorBlock", id: 1573461917
+mas "The Unarchiver", id: 425424353
+mas "UK Salary Calculator", id: 505795901
