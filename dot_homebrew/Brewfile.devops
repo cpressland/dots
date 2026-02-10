@@ -12,9 +12,8 @@ cask "zed"
 cask "visual-studio-code"
 
 # Infrastructure as Code
-tap "hashicorp/tap"
 brew "opentofu"
-brew "hashicorp/tap/terraform"
+brew "warrensbox/tap/tfswitch"
 
 # Kubernetes
 tap "fluxcd/tap"

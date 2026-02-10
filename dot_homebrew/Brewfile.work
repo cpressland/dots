@@ -1,0 +1,4 @@
+# Infrastructure as Code
+brew "warrensbox/tap/tfswitch"
+brew "aws-sam-cli"
+
