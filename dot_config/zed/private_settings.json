@@ -7,6 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "provider": "copilot",
+  },
+  "languages": {
+    "YAML": {
+      "tab_size": 2,
+    },
+    "Python": {
+      "language_servers": ["ty", "!basedpyright"],
+    },
+  },
   "terminal": {
     "shell": {
       "with_arguments": {
@@ -25,6 +36,7 @@
   "icon_theme": "Catppuccin Mocha",
   "ui_font_size": 16,
   "buffer_font_size": 15,
+  "remove_trailing_whitespace_on_save": true,
   "theme": {
     "mode": "system",
     "light": "One Light",
